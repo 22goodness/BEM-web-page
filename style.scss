@@ -1,0 +1,123 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$text-color: #333;
+$bg-color: #f5f5f5;
+
+@mixin button-style {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: $bg-color;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  background-color: $primary-color;
+  padding: 10px 0;
+  width: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+  }
+
+  &__logo-img {
+    height: 40px;
+    border-radius: 10px;
+    margin-right: 800px;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $secondary-color;
+      border-radius: 5px;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0;
+  
+  &__section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+   background-color: white;
+   border: 1px solid #ddd;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   overflow: visible;
+
+    &--featured {
+      background-color: $secondary-color;
+      color: white;
+    }
+
+    &__title {
+     font-size: 1.5rem;
+     margin-bottom: 10px;
+     color: $text-color;
+     z-index: 1;
+    }
+
+    &__description {
+     font-size: 1rem;
+     color: $text-color;
+     margin-bottom: 20px;
+    }
+
+    &__button {
+      background-color: $primary-color;
+      @include button-style;
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+
+  &__text {
+    margin: 0;
+  }
+}
