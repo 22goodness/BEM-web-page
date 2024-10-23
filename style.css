@@ -24,7 +24,7 @@ body {
 .header__logo-img {
   height: 40px;
   border-radius: 10px;
-  margin-right: 800px;
+  margin-right: 700px;
 }
 .header__nav {
   display: flex;
